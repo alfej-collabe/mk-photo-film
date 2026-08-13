@@ -1,0 +1,8 @@
+{
+  "name": "mk-photo-films",
+  "private": true,
+  "version": "1.0.1",
+  "dependencies": {
+    "@netlify/blobs": "^10.7.10"
+  }
+}

@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MK Photo Films — cinematic wedding photography, films and family stories.">
+<title>MK Photo Films — Sahil Khanusiya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-main: #0b0806;
+  --bg-card: rgba(26, 19, 14, 0.65);
+  --bg-card-hover: rgba(40, 29, 21, 0.85);
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --cream: #f7eedf;
+  --cream-muted: #cbbba6;
+  --brown-dark: #120c08;
+  --brown-mid: #261912;
+  --gold-glow: #f5d77f;
+  --gold-primary: #e5c158;
+  --gold-dark: #b88d37;
+  --gold-gradient: linear-gradient(135deg, #fff7e6 0%, #f5d77f 40%, #e5c158 70%, #ad7a35 100%);
+  --bronze-accent: #d97736;
+  --ink: #fdfaf5;
+  --muted: #a39180;
+  --line: rgba(229, 193, 88, 0.16);
+  --line-strong: rgba(229, 193, 88, 0.35);
+  --danger: #e75a4b;
+  --shadow-gold: 0 12px 40px rgba(229, 193, 88, 0.12);
+  --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-main);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+}
+body.lock { overflow: hidden; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: var(--brown-mid); border-radius: 4px; border: 1px solid var(--line); }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dark); }
+
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+img { max-width: 100%; display: block; }
+
+.container { width: min(1220px, calc(100% - 48px)); margin: auto; }
+.section { padding: 120px 0; position: relative; z-index: 2; }
+
+/* Background Animated Orbs */
+.bg-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+  animation: orbFloat 18s ease-in-out infinite alternate;
+}
+.glow-1 { top: -10%; right: -5%; width: 550px; height: 550px; background: radial-gradient(circle, rgba(229, 193, 88, 0.25) 0%, rgba(217, 119, 54, 0.1) 70%, transparent 100%); }
+.glow-2 { top: 40%; left: -10%; width: 650px; height: 650px; background: radial-gradient(circle, rgba(217, 119, 54, 0.2) 0%, rgba(184, 141, 55, 0.08) 70%, transparent 100%); }
+.glow-3 { bottom: 5%; right: -5%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(245, 215, 127, 0.2) 0%, rgba(38, 25, 18, 0.1) 70%, transparent 100%); }
+
+@keyframes orbFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -40px) scale(1.1); }
+  100% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--gold-primary);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.eyebrow::before {
+  content: "";
+  width: 42px;
+  height: 2px;
+  background: var(--gold-gradient);
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--gold-primary);
+}
+
+h1, h2, h3, .brand, .quote {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+}
+h2 {
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #ffffff 0%, #f7eedf 60%, #e2d1ba 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+p { color: var(--muted); font-size: 1.02rem; }
+
+/* Glowing Shimmer Text */
+.shimmer-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Modern Glowing Buttons */
+.btn {
+  position: relative;
+  border: 1px solid var(--gold-primary);
+  background: linear-gradient(135deg, #f5d77f 0%, #e5c158 50%, #c6964d 100%);
+  color: #120c08;
+  padding: 16px 32px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-shadow: var(--shadow-gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  transition: 0.6s;
+}
+.btn:hover::after { left: 140%; }
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(229, 193, 88, 0.35);
+  background: linear-gradient(135deg, #fff7e6 0%, #f5d77f 100%);
+}
+.btn.outline {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--cream);
+  border-color: var(--line-strong);
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+}
+.btn.outline:hover {
+  background: var(--line);
+  border-color: var(--gold-primary);
+  color: var(--gold-glow);
+  box-shadow: 0 8px 25px rgba(229, 193, 88, 0.2);
+}
+
+/* Header & Glass Nav */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(11, 8, 6, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--line);
+  transition: background 0.3s;
+}
+.nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  font-size: 2rem;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+.brand span {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+.nav-links { display: flex; gap: 38px; align-items: center; }
+.nav-links a {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  font-weight: 500;
+  transition: all 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px; left: 0;
+  width: 0; height: 2px;
+  background: var(--gold-gradient);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 2px;
+}
+.nav-links a:hover { color: var(--gold-glow); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  border: 1px solid var(--line-strong);
+  padding: 12px 24px;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  border-radius: 4px;
+  transition: all 0.3s;
+  background: rgba(229, 193, 88, 0.05);
+}
+.nav-cta:hover {
+  background: var(--gold-primary);
+  color: var(--brown-dark);
+  box-shadow: 0 0 20px rgba(229, 193, 88, 0.4);
+}
+.burger {
+  display: none;
+  background: none;
+  border: 0;
+  color: var(--gold-primary);
+  font-size: 2rem;
+}
+.mobile-menu {
+  display: none;
+  background: rgba(18, 12, 8, 0.96);
+  backdrop-filter: blur(20px);
+  padding: 24px;
+  border-top: 1px solid var(--line);
+}
+.mobile-menu.open { display: grid; gap: 14px; }
+.mobile-menu a {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background: radial-gradient(circle at 75% 30%, rgba(45, 28, 18, 0.6) 0%, var(--bg-main) 70%);
+  display: grid;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 80px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: clamp(5.2rem, 9.5vw, 8.8rem);
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-size: 0.72em;
+  font-style: italic;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+}
+.hero-copy {
+  font-size: 1.08rem;
+  color: var(--cream-muted);
+  max-width: 620px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+.hero-actions { display: flex; gap: 18px; flex-wrap: wrap; }
+
+/* Hero Card with Rotating Border Glow */
+.hero-card {
+  min-height: 580px;
+  border-radius: var(--radius);
+  padding: 3px;
+  position: relative;
+  background: linear-gradient(135deg, rgba(229,193,88,0.4), rgba(217,119,54,0.1), rgba(229,193,88,0.3));
+  box-shadow: var(--shadow-card), 0 0 40px rgba(229, 193, 88, 0.1);
+  transition: transform 0.5s ease;
+}
+.hero-card:hover { transform: translateY(-6px) scale(1.01); }
+.hero-card-inner {
+  height: 100%;
+  min-height: 574px;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border-radius: calc(var(--radius) - 2px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  transition: transform 0.7s ease;
+}
+.hero-card:hover .hero-photo { transform: scale(1.05); }
+.hero-initials {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 10rem;
+  color: rgba(229, 193, 88, 0.25);
+  border: 2px solid var(--line-strong);
+  width: 260px;
+  height: 260px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(229, 193, 88, 0.1);
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 20px rgba(229, 193, 88, 0.1); border-color: rgba(229, 193, 88, 0.2); }
+  100% { box-shadow: 0 0 60px rgba(229, 193, 88, 0.35); border-color: rgba(229, 193, 88, 0.5); }
+}
+.hero-tag {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  background: rgba(18, 12, 8, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line-strong);
+  color: var(--gold-glow);
+  padding: 14px 24px;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Stats Strip */
+.stats-strip {
+  background: rgba(22, 15, 11, 0.8);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 3;
+}
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); }
+.stat {
+  padding: 42px 24px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+  transition: background 0.3s;
+}
+.stat:hover { background: rgba(229, 193, 88, 0.03); }
+.stat:last-child { border-right: 0; }
+.stat strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 4rem;
+  line-height: 1;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+.stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* About Studio Section */
+.about { background: var(--bg-main); }
+.about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 90px; align-items: center; }
+.about-photo-wrap {
+  border: 1px solid var(--line-strong);
+  padding: 14px;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-card);
+}
+.about-photo-box {
+  aspect-ratio: 4/5;
+  background: rgba(38, 25, 18, 0.5);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 4px);
+}
+.about-photo { width: 100%; height: 100%; object-fit: cover; display: none; }
+.about-initials {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 8rem;
+  color: rgba(229, 193, 88, 0.2);
+}
+.about h2 { margin-bottom: 12px; }
+.about-role {
+  color: var(--bronze-accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+.about p { margin-bottom: 22px; max-width: 720px; color: var(--cream-muted); font-size: 1.05rem; }
+.about-tag {
+  display: inline-block;
+  margin-top: 18px;
+  background: rgba(229, 193, 88, 0.1);
+  border: 1px solid var(--line-strong);
+  color: var(--gold-glow);
+  padding: 12px 24px;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+/* Services Section */
+.services { background: var(--brown-dark); position: relative; }
+.services-head { max-width: 760px; margin-bottom: 60px; }
+.services-head p { margin-top: 22px; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.service {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--line);
+  padding: 42px 34px;
+  min-height: 275px;
+  border-radius: var(--radius);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.service::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gold-gradient);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.service:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-8px);
+  border-color: var(--line-strong);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(229, 193, 88, 0.15);
+}
+.service:hover::before { opacity: 1; }
+.service-num {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--gold-primary);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 28px;
+}
+.service h3 { font-size: 2.1rem; margin-bottom: 14px; color: var(--cream); }
+.service p { font-size: 0.95rem; color: var(--muted); }
+
+/* Portfolio Section */
+.portfolio { background: var(--bg-main); }
+.portfolio-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+.portfolio-head p { max-width: 580px; }
+
+/* Filter Tabs */
+.filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
+.filter {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--cream-muted);
+  padding: 12px 22px;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.filter.active, .filter:hover {
+  background: var(--gold-gradient);
+  color: var(--brown-dark);
+  border-color: var(--gold-primary);
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(229, 193, 88, 0.3);
+}
+
+/* Portfolio Client Grid */
+.client-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.client-card {
+  aspect-ratio: 4/5;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-card);
+  cursor: pointer;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.client-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+.client-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--line-strong);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 30px rgba(229, 193, 88, 0.2);
+}
+.client-card:hover img { transform: scale(1.08); }
+.client-empty { height: 100%; display: grid; place-items: center; font-family: "Cormorant Garamond"; font-size: 6rem; color: rgba(229, 193, 88, 0.15); }
+.client-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  background: linear-gradient(180deg, transparent 40%, rgba(11, 8, 6, 0.95) 100%);
+  transition: background 0.3s;
+}
+.client-name { font-family: "Cormorant Garamond", serif; font-size: 2.2rem; line-height: 1.05; color: var(--cream); }
+.badge {
+  display: inline-block;
+  align-self: flex-start;
+  color: var(--brown-dark);
+  background: var(--gold-gradient);
+  padding: 5px 12px;
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-top: 12px;
+  font-weight: 700;
+  border-radius: 20px;
+}
+.count { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+.empty { padding: 60px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--radius); }
+
+/* Contact Section */
+.contact { background: var(--brown-dark); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+.contact h2 { max-width: 550px; margin-bottom: 40px; }
+.contact-list { display: grid; gap: 14px; }
+.contact-item {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 20px;
+  padding: 22px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: all 0.3s;
+  align-items: center;
+}
+.contact-item:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--line-strong);
+  transform: translateX(6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+.contact-icon {
+  width: 48px; height: 48px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold-glow);
+  font-size: 1.2rem;
+  background: rgba(229, 193, 88, 0.06);
+}
+.contact-item small { display: block; color: var(--muted); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4px; }
+.contact-item strong { font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 500; color: var(--cream); }
+
+.quote-box {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  min-height: 440px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 60px 40px;
+  position: relative;
+  box-shadow: var(--shadow-card);
+}
+.quote { font-size: 3.2rem; line-height: 1.1; max-width: 700px; color: var(--cream); }
+.quote-author { color: var(--gold-glow); letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.72rem; margin-top: 32px; font-weight: 600; }
+
+/* Footer */
+.footer { background: #070504; color: var(--muted); padding: 40px 0; border-top: 1px solid var(--line); }
+.footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+.footer small { font-size: 0.7rem; letter-spacing: 0.12em; }
+.admin-link { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-primary); transition: color 0.3s; }
+.admin-link:hover { color: var(--gold-glow); text-decoration: underline; }
+
+/* Modals & Viewer */
+.modal {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(7, 5, 4, 0.94);
+  backdrop-filter: blur(24px);
+  display: none; align-items: flex-start; justify-content: center;
+  padding: 60px 20px; overflow: auto;
+  animation: fadeIn 0.3s ease-out;
+}
+.modal.open { display: flex; }
+.modal-box {
+  width: min(1140px, 100%);
+  background: var(--brown-dark);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+}
+.modal-head { padding: 40px 48px; border-bottom: 1px solid var(--line); }
+.modal-head h3 { font-size: 3.2rem; color: var(--cream); }
+.close {
+  position: absolute; right: 20px; top: 20px;
+  width: 44px; height: 44px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--gold-glow);
+  font-size: 1.6rem; border-radius: 50%;
+  display: grid; place-items: center;
+  transition: all 0.3s;
+}
+.close:hover { background: var(--gold-primary); color: var(--brown-dark); }
+
+.media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 28px; }
+.media-item { aspect-ratio: 1; background: var(--bg-card); overflow: hidden; cursor: pointer; border-radius: 8px; border: 1px solid var(--line); transition: transform 0.3s; }
+.media-item:hover { transform: scale(1.03); border-color: var(--gold-primary); }
+.media-item img { width: 100%; height: 100%; object-fit: cover; }
+.media-video { height: 100%; display: grid; place-items: center; color: var(--gold-glow); font-size: 2.6rem; }
+
+.viewer { position: fixed; inset: 0; z-index: 700; background: rgba(0,0,0,0.96); display: none; place-items: center; padding: 30px; }
+.viewer.open { display: grid; animation: fadeIn 0.25s ease-out; }
+.viewer img { max-width: 94vw; max-height: 90vh; object-fit: contain; border-radius: 8px; box-shadow: 0 0 50px rgba(0,0,0,0.8); }
+
+.login { position: fixed; inset: 0; z-index: 900; background: rgba(7, 5, 4, 0.94); backdrop-filter: blur(24px); display: none; place-items: center; padding: 20px; }
+.login.open { display: grid; animation: fadeIn 0.3s ease-out; }
+.login-box {
+  width: min(450px, 100%);
+  background: var(--brown-dark);
+  padding: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+.login-box h3 { font-size: 2.8rem; color: var(--cream); }
+.login-box p { margin: 10px 0 26px; color: var(--muted); }
+
+.input, .field input, .field textarea, .field select, .add-row input, .add-row select {
+  width: 100%; padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--cream);
+  outline: 0;
+  transition: all 0.3s;
+}
+.input:focus, .field input:focus, .field textarea:focus, .field select:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 15px rgba(229, 193, 88, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Studio Admin Dashboard */
+.admin { position: fixed; inset: 0; z-index: 850; background: var(--bg-main); display: none; overflow: auto; }
+.admin.open { display: block; }
+.admin-top {
+  position: sticky; top: 0; z-index: 5;
+  background: rgba(18, 12, 8, 0.95);
+  backdrop-filter: blur(20px);
+  color: var(--cream);
+  padding: 20px 36px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid var(--line-strong);
+}
+.admin-top h2 { font-size: 2.2rem; }
+.admin-body { width: min(1140px, calc(100% - 40px)); margin: auto; padding: 48px 0 100px; }
+.admin-section { margin-bottom: 50px; }
+.admin-section > h4 { color: var(--gold-glow); font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 20px; font-weight: 700; }
+.settings-card, .media-manager { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; margin-bottom: 20px; }
+.settings-card h5 { font-family: "Cormorant Garamond", serif; font-size: 2.2rem; margin-bottom: 20px; color: var(--cream); }
+.settings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { margin-bottom: 14px; } .field.full { grid-column: 1/-1; }
+.field label { display: block; font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.field textarea { min-height: 110px; resize: vertical; }
+
+.photo-setting { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+.photo-preview { width: 130px; height: 160px; border: 1px solid var(--line); border-radius: 8px; background: rgba(0,0,0,0.3); display: grid; place-items: center; overflow: hidden; color: var(--muted); }
+.photo-preview img { width: 100%; height: 100%; object-fit: cover; }
+.save-row, .add-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.add-row input { flex: 1; min-width: 240px; } .add-row select { width: 200px; }
+
+.manage-list { display: grid; gap: 12px; }
+.manage-row { background: var(--bg-card); border: 1px solid var(--line); border-radius: 8px; padding: 18px 24px; display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: center; }
+.manage-name { font-family: "Cormorant Garamond", serif; font-size: 1.6rem; color: var(--cream); }
+.manage-category { padding: 10px; border: 1px solid var(--line); background: rgba(0,0,0,0.3); color: var(--cream); border-radius: 6px; }
+.actions { display: flex; gap: 8px; }
+.icon-btn { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--cream); display: grid; place-items: center; transition: all 0.25s; }
+.icon-btn:hover { border-color: var(--gold-primary); color: var(--gold-glow); background: rgba(229, 193, 88, 0.1); }
+.icon-btn.danger:hover { border-color: var(--danger); color: var(--danger); background: rgba(231, 90, 75, 0.1); }
+
+.upload-zone { border: 2px dashed var(--line-strong); border-radius: var(--radius); padding: 40px; text-align: center; color: var(--muted); cursor: pointer; background: rgba(255, 255, 255, 0.02); transition: all 0.3s; }
+.upload-zone:hover { border-color: var(--gold-primary); background: rgba(229, 193, 88, 0.05); }
+.upload-zone strong { display: block; color: var(--gold-glow); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+.video-row { display: flex; gap: 12px; margin: 20px 0; } .video-row input { flex: 1; }
+.admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 20px; }
+.admin-thumb { position: relative; aspect-ratio: 1; background: rgba(0,0,0,0.3); border-radius: 8px; overflow: hidden; border: 1px solid var(--line); }
+.admin-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.admin-thumb button { position: absolute; right: 8px; top: 8px; width: 30px; height: 30px; background: rgba(11, 8, 6, 0.85); color: white; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; cursor: pointer; }
+
+.help { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
+.error { color: var(--danger); font-size: 0.82rem; min-height: 20px; margin-top: 10px; }
+.toast { position: fixed; left: 50%; bottom: 28px; z-index: 1000; transform: translate(-50%, 20px); opacity: 0; background: var(--gold-gradient); color: var(--brown-dark); font-weight: 700; padding: 14px 28px; border-radius: 30px; font-size: 0.78rem; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* Scroll Reveal Utility Classes */
+.reveal { opacity: 0; transform: translateY(40px); transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media(max-width: 900px) {
+  .nav-links, .nav-cta { display: none; } .burger { display: block; }
+  .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .hero-card { min-height: 440px; } .hero-card-inner { min-height: 434px; }
+  .services-grid, .client-grid { grid-template-columns: 1fr 1fr; }
+  .portfolio-head { display: block; } .portfolio-head p { margin-top: 20px; }
+}
+@media(max-width: 600px) {
+  .container { width: min(100% - 32px, 1220px); } .section { padding: 85px 0; }
+  .hero h1 { font-size: 4.8rem; } .stats { grid-template-columns: 1fr; } .stat { border-right: 0; border-bottom: 1px solid var(--line); } .stat:last-child { border-bottom: 0; }
+  .services-grid, .client-grid, .media-grid { grid-template-columns: 1fr; }
+  .settings-grid { grid-template-columns: 1fr; } .field.full { grid-column: auto; }
+  .manage-row { grid-template-columns: 1fr; } .add-row select { width: 100%; } .video-row { flex-direction: column; }
+  .footer-inner { display: grid; gap: 12px; } .modal { padding: 30px 10px; } .modal-head { padding: 30px 24px; } .modal-head h3 { font-size: 2.4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Ambient Glow Orbs -->
+<div class="bg-glow-orb glow-1"></div>
+<div class="bg-glow-orb glow-2"></div>
+<div class="bg-glow-orb glow-3"></div>
+
+<header class="header" id="header">
+ <div class="container nav">
+  <a href="#home" class="brand">MK <span>Photo Films</span></a>
+  <nav class="nav-links">
+   <a href="#about">Studio</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="nav-cta" href="#contact">Book a Date</a>
+  <button class="burger" id="burger">☰</button>
+ </div>
+ <div class="mobile-menu" id="mobileMenu">
+  <a href="#about">Studio</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div class="reveal">
+   <div class="eyebrow" id="heroEyebrow">Wedding Photography & Films</div>
+   <h1><span id="heroTitle1">MK PHOTO</span><br><em id="heroTitle2">Films</em></h1>
+   <p class="hero-copy" id="heroSub">Cinematic wedding photography & films by Sahil Khanusiya — every frame shot to be felt again, years from now.</p>
+   <div class="hero-actions"><a class="btn" id="heroWhatsApp" href="#" target="_blank">WhatsApp Studio</a><a class="btn outline" href="#portfolio">View Portfolio</a></div>
+  </div>
+  <div class="hero-card reveal"><div class="hero-card-inner">
+   <img id="heroPhoto" class="hero-photo" alt="Founder">
+   <div id="heroInitials" class="hero-initials">SK</div>
+   <div class="hero-tag" id="heroOwnerTag">Founder & Lead Photographer</div>
+  </div></div>
+ </div>
+</section>
+
+<section class="stats-strip"><div class="container stats reveal">
+ <div class="stat"><strong id="statClients">0</strong><span id="statClientsLabel">Clients Shot</span></div>
+ <div class="stat"><strong id="statMedia">0</strong><span id="statMediaLabel">Moments Delivered</span></div>
+ <div class="stat"><strong id="statCraft">100%</strong><span id="statCraftLabel">Candid Craft</span></div>
+</div></section>
+
+<section class="section about" id="about">
+ <div class="container about-grid">
+  <div class="about-photo-wrap reveal"><div class="about-photo-box">
+   <img id="aboutPhoto" class="about-photo" alt="Sahil Khanusiya">
+   <div id="aboutInitials" class="about-initials">SK</div>
+  </div></div>
+  <div class="reveal">
+   <div class="eyebrow" id="aboutEyebrow">The Studio</div>
+   <h2 id="aboutName">Sahil Khanusiya</h2>
+   <div class="about-role" id="aboutRole">MK Photo Films — Ahmedabad</div>
+   <p id="aboutP1"></p><p id="aboutP2"></p>
+   <div class="about-tag" id="founderTag">Founder & Lead Photographer</div>
+  </div>
+ </div>
+</section>
+
+<section class="section services" id="services">
+ <div class="container">
+  <div class="services-head reveal"><div class="eyebrow">What We Do</div><h2>Stories, not just pictures.</h2><p>Every service is designed to preserve the feeling of the day with a cinematic, elegant and personal visual language.</p></div>
+  <div class="services-grid reveal" id="servicesGrid"></div>
+ </div>
+</section>
+
+<section class="section portfolio" id="portfolio">
+ <div class="container">
+  <div class="portfolio-head reveal"><div><div class="eyebrow">Selected Work</div><h2>Portfolio collections.</h2></div><p>Wedding stories, pre-weddings, baby shoots, maternity sessions, engagements and celebrations — each client album is managed privately from the Studio Dashboard.</p></div>
+  <div class="filters reveal" id="filters"></div>
+  <div id="portfolioLoading" class="empty">Loading collections…</div>
+  <div class="client-grid reveal" id="clientGrid"></div>
+  <div id="portfolioEmpty" class="empty" style="display:none">No collections yet.</div>
+ </div>
+</section>
+
+<section class="section contact" id="contact">
+ <div class="container contact-grid">
+  <div class="reveal">
+   <div class="eyebrow">Get In Touch</div><h2>Let's frame your story.</h2>
+   <div class="contact-list">
+    <a class="contact-item" id="phoneLink"><div class="contact-icon">⌕</div><div><small>Call</small><strong id="phoneText"></strong></div></a>
+    <a class="contact-item" id="whatsappLink" target="_blank"><div class="contact-icon">◌</div><div><small>WhatsApp</small><strong id="whatsappText"></strong></div></a>
+    <a class="contact-item" id="instagramLink" target="_blank"><div class="contact-icon">◎</div><div><small>Instagram</small><strong id="instagramText"></strong></div></a>
+   </div>
+  </div>
+  <div class="quote-box reveal"><div><div class="quote" id="quote"></div><div class="quote-author" id="quoteAuthor"></div></div></div>
+ </div>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer-inner"><small id="footerText">MK Photo Films. All rights reserved.</small><a href="#" class="admin-link" id="studioLogin">Studio Admin</a></div></footer>
+
+<div class="modal" id="galleryModal"><div class="modal-box"><button class="close" id="closeGallery">×</button><div class="modal-head"><div class="eyebrow">Client Album</div><h3 id="modalName">Album</h3></div><div class="media-grid" id="modalMedia"></div></div></div>
+<div class="viewer" id="viewer"><button class="close" id="closeViewer">×</button><div id="viewerContent"></div></div>
+
+<div class="login" id="loginModal"><div class="login-box">
+ <div class="eyebrow">Private Area</div><h3>Studio Dashboard</h3><p>Manage website settings, clients, portfolio categories, photos and videos.</p>
+ <input class="input" id="adminPassword" type="password" placeholder="Admin password">
+ <div class="error" id="loginError"></div><div class="save-row" style="margin-top:16px"><button class="btn" id="loginBtn">Login</button><button class="btn outline" id="loginCancel">Cancel</button></div>
+</div></div>
+
+<div class="admin" id="adminPanel">
+ <div class="admin-top"><h2>Studio Dashboard</h2><button class="icon-btn" id="closeAdmin" style="color:var(--cream);border-color:rgba(255,255,255,.25)">×</button></div>
+ <div class="admin-body">
+
+  <div class="admin-section">
+   <h4>Website Settings</h4>
+   <div class="settings-card">
+    <h5>Hero & Studio</h5>
+    <div class="settings-grid">
+     <div class="field"><label>Hero eyebrow</label><input id="sHeroEyebrow"></div>
+     <div class="field"><label>Owner name</label><input id="sOwnerName"></div>
+     <div class="field"><label>Hero title line 1</label><input id="sHeroTitle1"></div>
+     <div class="field"><label>Hero title line 2</label><input id="sHeroTitle2"></div>
+     <div class="field full"><label>Hero description</label><textarea id="sHeroSub"></textarea></div>
+     <div class="field"><label>About eyebrow</label><input id="sAboutEyebrow"></div>
+     <div class="field"><label>About name</label><input id="sAboutName"></div>
+     <div class="field"><label>About role</label><input id="sAboutRole"></div>
+     <div class="field"><label>Founder tag</label><input id="sFounderTag"></div>
+     <div class="field full"><label>About paragraph 1</label><textarea id="sAboutP1"></textarea></div>
+     <div class="field full"><label>About paragraph 2</label><textarea id="sAboutP2"></textarea></div>
+    </div>
+   </div>
+
+   <div class="settings-card">
+    <h5>Founder Photo</h5>
+    <p class="help">Upload one photo here. It appears in the Studio section and hero card.</p>
+    <div class="photo-setting"><div class="photo-preview" id="photoPreview">No photo</div><div><input type="file" id="founderPhotoInput" accept="image/*" hidden><button class="btn" id="chooseFounder">Choose Photo</button></div></div>
+   </div>
+
+   <div class="settings-card">
+    <h5>Stats, Contact & Quote</h5>
+    <div class="settings-grid">
+     <div class="field"><label>Clients</label><input id="sStatClients"></div><div class="field"><label>Clients label</label><input id="sStatClientsLabel"></div>
+     <div class="field"><label>Media</label><input id="sStatMedia"></div><div class="field"><label>Media label</label><input id="sStatMediaLabel"></div>
+     <div class="field"><label>Craft value</label><input id="sStatCraft"></div><div class="field"><label>Craft label</label><input id="sStatCraftLabel"></div>
+     <div class="field"><label>Phone</label><input id="sPhone"></div><div class="field"><label>WhatsApp</label><input id="sWhatsApp"></div>
+     <div class="field"><label>WhatsApp display</label><input id="sWhatsAppDisplay"></div><div class="field"><label>Instagram URL</label><input id="sInstagramUrl"></div>
+     <div class="field"><label>Instagram display</label><input id="sInstagramDisplay"></div><div class="field"><label>Quote author</label><input id="sQuoteAuthor"></div>
+     <div class="field full"><label>Quote</label><textarea id="sQuote"></textarea></div>
+     <div class="field full"><label>Footer text</label><input id="sFooterText"></div>
+    </div>
+    <label style="display:flex;gap:10px;align-items:center;color:var(--muted);font-size:.8rem;margin-top:14px;cursor:pointer"><input type="checkbox" id="sStatsAuto"> Automatically count clients and uploaded media</label>
+   </div>
+
+   <div class="settings-card">
+    <h5>Services</h5>
+    <p class="help">These six cards are always visible in the public “What We Do” section.</p>
+    <div id="serviceFields"></div>
+   </div>
+
+   <div class="save-row"><button class="btn" id="saveSettings">Save Website Settings</button><button class="btn outline" id="resetSettings">Reset Text Defaults</button></div>
+   <div class="error" id="settingsError"></div>
+  </div>
+
+  <div class="admin-section">
+   <h4>Add New Client Album</h4>
+   <div class="settings-card">
+    <div class="add-row"><input id="clientName" placeholder="Client name, e.g. Riya & Karan"><select id="clientCategory"></select><button class="btn" id="addClient">Add Client</button></div>
+    <div class="error" id="clientError"></div>
+   </div>
+  </div>
+
+  <div class="admin-section">
+   <h4>Manage Client Albums</h4>
+   <div class="manage-list" id="clientList"></div><div id="clientEmpty" class="empty" style="display:none">No client albums yet.</div>
+   <div id="mediaManager"></div>
+  </div>
+ </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<input type="file" id="mediaInput" accept="image/*" multiple hidden>
+
+<script>
+"use strict";
+const ADMIN_PASSWORD="mkphotofilm2026";
+const CATS=["Wedding","Pre-Wedding","Baby Shoot","Maternity","Engagement","Birthday","Other"];
+const DEFAULT={
+ heroEyebrow:"Wedding Photography & Films",heroTitle1:"MK PHOTO",heroTitle2:"Films",ownerName:"Sahil Khanusiya",
+ heroSub:"Cinematic wedding photography & films by {OWNER} — every frame shot to be felt again, years from now.",
+ aboutEyebrow:"The Studio",aboutName:"Sahil Khanusiya",aboutRole:"MK Photo Films — Ahmedabad",
+ aboutP1:"MK Photo Films is a wedding photography & film studio built on one belief — a wedding should be documented the way it felt, not just the way it looked. Every candid glance, every ritual, every unscripted laugh is framed with intent.",
+ aboutP2:"Led by Sahil Khanusiya, the studio blends candid storytelling with cinematic film craft, working closely with every family to turn their day into an archive they'll return to for decades.",
+ founderTag:"Founder & Lead Photographer",aboutPhoto:"",statClients:"0",statClientsLabel:"Clients Shot",statMedia:"0",statMediaLabel:"Moments Delivered",statCraft:"100%",statCraftLabel:"Candid Craft",statsAuto:true,
+ services:[
+  {title:"Wedding Photography",desc:"Full-day candid & traditional coverage across every ceremony, styled to feel timeless."},
+  {title:"Cinematic Films",desc:"Story-led wedding films cut like short cinema — music, motion & the moments in between."},
+  {title:"Pre-Wedding Shoots",desc:"Location-based couple shoots designed around your story, not a generic checklist of poses."},
+  {title:"Candid Coverage",desc:"Unposed, real-time storytelling — reactions, emotions and details captured as they happen."},
+  {title:"Event & Reception",desc:"Engagements, sangeet & receptions covered with the same craft as the main event."},
+  {title:"Photo Albums",desc:"Curated, printed keepsake albums — the physical archive of your biggest day."}
+ ],
+ phone:"+91 91731 78720",whatsapp:"+91 91731 78720",whatsappDisplay:"Message the studio",
+ instagramUrl:"https://www.instagram.com/the_mk_photo_films",instagramDisplay:"@the_mk_photo_films",
+ quote:"A wedding lasts a day. The frames last forever.",quoteAuthor:"Sahil Khanusiya",footerText:"MK Photo Films. All rights reserved."
+};
+let settings=structuredClone(DEFAULT),activeCategory="All";
+
+const $=id=>document.getElementById(id);
+const esc=s=>{const d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML};
+const slug=s=>String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"")||("client-"+Date.now());
+const normCat=c=>CATS.includes(c)?c:"Wedding";
+const merge=s=>{const x={...DEFAULT,...(s||{})};x.services=Array.isArray(x.services)&&x.services.length===6?x.services.map((v,i)=>({...DEFAULT.services[i],...v})):structuredClone(DEFAULT.services);return x};
+function toast(msg){const t=$("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2800)}
+async function api(url,opt){const r=await fetch(url,opt);const txt=await r.text();let data={};try{data=txt?JSON.parse(txt):{}}catch{data={error:txt||"Invalid server response"}}if(!r.ok)throw new Error(data.error||data.detail||`HTTP ${r.status}`);return data}
+async function getSettings(){try{return await api("/.netlify/functions/settings")}catch(e){console.error(e);return structuredClone(DEFAULT)}}
+async function saveSettings(s){return api("/.netlify/functions/settings",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(s)})}
+async function getClients(){try{return await api("/.netlify/functions/clients")}catch(e){console.error(e);return[]}}
+async function saveClients(list){try{return await api("/.netlify/functions/clients",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(list)}),true}catch(e){console.error(e);return false}}
+async function getMedia(id){try{return await api("/.netlify/functions/media?clientId="+encodeURIComponent(id))}catch(e){console.error(e);return[]}}
+async function saveMedia(id,list){try{await api("/.netlify/functions/media?clientId="+encodeURIComponent(id),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(list)});return true}catch(e){console.error(e);return false}}
+async function deleteMediaStore(id){try{await api("/.netlify/functions/media?clientId="+encodeURIComponent(id),{method:"DELETE"});return true}catch(e){console.error(e);return false}}
+
+function renderServices(){
+ const grid=$("servicesGrid"); if(!grid)return;
+ const list=Array.isArray(settings.services)&&settings.services.length===6?settings.services:DEFAULT.services;
+ grid.innerHTML=list.map((s,i)=>`<article class="service"><div class="service-num">0${i+1}</div><h3>${esc(s.title)}</h3><p>${esc(s.desc)}</p></article>`).join("");
+}
+
+function animateCounter(el, targetStr){
+  const target = parseInt(targetStr, 10);
+  if(isNaN(target)) { el.textContent = targetStr; return; }
+  let current = 0;
+  const duration = 1200;
+  const stepTime = 20;
+  const steps = duration / stepTime;
+  const increment = target / steps;
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      el.textContent = target;
+      clearInterval(timer);
+    } else {
+      el.textContent = Math.floor(current);
+    }
+  }, stepTime);
+}
+
+function applySettings(){
+ $("heroEyebrow").textContent=settings.heroEyebrow;
+ $("heroTitle1").textContent=settings.heroTitle1;
+ $("heroTitle2").textContent=settings.heroTitle2;
+ $("heroSub").textContent=String(settings.heroSub||"").replaceAll("{OWNER}",settings.ownerName);
+ $("aboutEyebrow").textContent=settings.aboutEyebrow;$("aboutName").textContent=settings.aboutName;$("aboutRole").textContent=settings.aboutRole;
+ $("aboutP1").textContent=settings.aboutP1;$("aboutP2").textContent=settings.aboutP2;$("founderTag").textContent=settings.founderTag;
+ 
+ animateCounter($("statClients"), settings.statClients);
+ $("statClientsLabel").textContent=settings.statClientsLabel;
+ animateCounter($("statMedia"), settings.statMedia);
+ $("statMediaLabel").textContent=settings.statMediaLabel;
+ $("statCraft").textContent=settings.statCraft;$("statCraftLabel").textContent=settings.statCraftLabel;
+
+ $("phoneText").textContent=settings.phone;$("whatsappText").textContent=settings.whatsappDisplay;$("instagramText").textContent=settings.instagramDisplay;
+ $("phoneLink").href="tel:"+String(settings.phone).replace(/\s+/g,"");$("whatsappLink").href="https://wa.me/"+String(settings.whatsapp).replace(/\D/g,"");
+ $("heroWhatsApp").href="https://wa.me/"+String(settings.whatsapp).replace(/\D/g,"");$("instagramLink").href=settings.instagramUrl;
+ $("quote").textContent=settings.quote;$("quoteAuthor").textContent="— "+settings.quoteAuthor;$("footerText").textContent=settings.footerText;
+ if(settings.aboutPhoto){$("aboutPhoto").src=settings.aboutPhoto;$("aboutPhoto").style.display="block";$("aboutInitials").style.display="none";$("heroPhoto").src=settings.aboutPhoto;$("heroPhoto").style.display="block";$("heroInitials").style.display="none"}else{$("aboutPhoto").style.display="none";$("aboutInitials").style.display="grid";$("heroPhoto").style.display="none";$("heroInitials").style.display="grid"}
+ renderServices(); updateForm();
+}
+function renderFilters(){
+ const wrap=$("filters");wrap.innerHTML="";
+ ["All",...CATS].forEach(cat=>{const b=document.createElement("button");b.className="filter"+(activeCategory===cat?" active":"");b.textContent=cat;b.onclick=()=>{activeCategory=cat;renderFilters();renderPortfolio()};wrap.appendChild(b)})
+}
+async function renderPortfolio(){
+ $("portfolioLoading").style.display="block";$("portfolioEmpty").style.display="none";$("clientGrid").innerHTML="";
+ const clients=await getClients();let list=activeCategory==="All"?clients:clients.filter(c=>normCat(c.category)===activeCategory);
+ if(!list.length){$("portfolioLoading").style.display="none";$("portfolioEmpty").style.display="block";$("portfolioEmpty").textContent=activeCategory==="All"?"No collections yet.":"No albums in "+activeCategory+" yet.";return}
+ let total=0,html="";
+ for(const c of list){const media=await getMedia(c.id);total+=media.length;const photo=media.find(x=>x.type==="photo");html+=`<article class="client-card" data-id="${esc(c.id)}">${photo?`<img src="${photo.src}" alt="${esc(c.name)}" loading="lazy">`:`<div class="client-empty">✦</div>`}<div class="client-overlay"><div class="client-name">${esc(c.name)}</div><span class="badge">${esc(normCat(c.category))}</span><div class="count">${media.length} ${media.length===1?"moment":"moments"}</div></div></article>`}
+ $("clientGrid").innerHTML=html;$("portfolioLoading").style.display="none";
+ if(settings.statsAuto){
+   animateCounter($("statClients"), clients.length);
+   animateCounter($("statMedia"), total);
+ }
+ document.querySelectorAll(".client-card").forEach(c=>c.onclick=()=>openGallery(c.dataset.id));
+}
+async function openGallery(id){
+ const clients=await getClients(),c=clients.find(x=>x.id===id);if(!c)return;
+ $("modalName").textContent=c.name;$("modalMedia").innerHTML='<div class="empty">Loading album…</div>';$("galleryModal").classList.add("open");document.body.classList.add("lock");
+ const media=await getMedia(id);if(!media.length){$("modalMedia").innerHTML='<div class="empty">No photos or videos in this album yet.</div>';return}
+ $("modalMedia").innerHTML=media.map((m,i)=>m.type==="photo"?`<div class="media-item" data-i="${i}"><img src="${m.src}" loading="lazy"></div>`:`<div class="media-item" data-i="${i}"><div class="media-video">▶</div></div>`).join("");
+ document.querySelectorAll(".media-item").forEach(el=>el.onclick=()=>{const m=media[+el.dataset.i];if(m.type==="video")window.open(m.src,"_blank","noopener");else{$("viewerContent").innerHTML=`<img src="${m.src}" alt="">`;$("viewer").classList.add("open")}})
+}
+function updateForm(){
+ const map={sHeroEyebrow:"heroEyebrow",sOwnerName:"ownerName",sHeroTitle1:"heroTitle1",sHeroTitle2:"heroTitle2",sHeroSub:"heroSub",sAboutEyebrow:"aboutEyebrow",sAboutName:"aboutName",sAboutRole:"aboutRole",sFounderTag:"founderTag",sAboutP1:"aboutP1",sAboutP2:"aboutP2",sStatClients:"statClients",sStatClientsLabel:"statClientsLabel",sStatMedia:"statMedia",sStatMediaLabel:"statMediaLabel",sStatCraft:"statCraft",sStatCraftLabel:"statCraftLabel",sPhone:"phone",sWhatsApp:"whatsapp",sWhatsAppDisplay:"whatsappDisplay",sInstagramUrl:"instagramUrl",sInstagramDisplay:"instagramDisplay",sQuote:"quote",sQuoteAuthor:"quoteAuthor",sFooterText:"footerText"};
+ Object.entries(map).forEach(([id,key])=>$(id).value=settings[key]??"");$("sStatsAuto").checked=!!settings.statsAuto;
+ $("photoPreview").innerHTML=settings.aboutPhoto?`<img src="${settings.aboutPhoto}" alt="">`:"No photo";
+ const wrap=$("serviceFields");wrap.innerHTML="";
+ settings.services.forEach((s,i)=>{const card=document.createElement("div");card.className="settings-card";card.style.margin="0 0 16px";card.innerHTML=`<div class="settings-grid"><div class="field"><label>Service ${i+1} title</label><input data-service-title="${i}"></div><div class="field"><label>Service ${i+1} description</label><textarea data-service-desc="${i}"></textarea></div></div>`;wrap.appendChild(card);card.querySelector("[data-service-title]").value=s.title;card.querySelector("[data-service-desc]").value=s.desc});
+}
+function readForm(){
+ const s=structuredClone(settings);
+ const map={sHeroEyebrow:"heroEyebrow",sOwnerName:"ownerName",sHeroTitle1:"heroTitle1",sHeroTitle2:"heroTitle2",sHeroSub:"heroSub",sAboutEyebrow:"aboutEyebrow",sAboutName:"aboutName",sAboutRole:"aboutRole",sFounderTag:"founderTag",sAboutP1:"aboutP1",sAboutP2:"aboutP2",sStatClients:"statClients",sStatClientsLabel:"statClientsLabel",sStatMedia:"statMedia",sStatMediaLabel:"statMediaLabel",sStatCraft:"statCraft",sStatCraftLabel:"statCraftLabel",sPhone:"phone",sWhatsApp:"whatsapp",sWhatsAppDisplay:"whatsappDisplay",sInstagramUrl:"instagramUrl",sInstagramDisplay:"instagramDisplay",sQuote:"quote",sQuoteAuthor:"quoteAuthor",sFooterText:"footerText"};
+ Object.entries(map).forEach(([id,key])=>s[key]=$(id).value.trim());s.statsAuto=$("sStatsAuto").checked;
+ s.services=[...document.querySelectorAll("[data-service-title]")].map((el,i)=>({title:el.value.trim(),desc:document.querySelector(`[data-service-desc="${i}"]`).value.trim()}));
+ return s;
+}
+function renderClientList(){
+ getClients().then(clients=>{
+  $("clientList").innerHTML="";$("clientEmpty").style.display=clients.length?"none":"block";
+  clients.forEach(c=>{
+   const row=document.createElement("div");row.className="manage-row";
+   row.innerHTML=`<div class="manage-name">${esc(c.name)}</div><select class="manage-category">${CATS.map(x=>`<option ${normCat(c.category)===x?"selected":""}>${x}</option>`).join("")}</select><div class="actions"><button class="icon-btn save-cat" title="Save category">✓</button><button class="icon-btn manage-media" title="Manage photos">↑</button><button class="icon-btn danger del-client" title="Delete">⌫</button></div>`;
+   $("clientList").appendChild(row);
+   row.querySelector(".save-cat").onclick=async()=>{const all=await getClients(),item=all.find(x=>x.id===c.id);item.category=row.querySelector("select").value;if(await saveClients(all)){toast("Category updated");renderPortfolio()}else toast("Could not update category")};
+   row.querySelector(".manage-media").onclick=()=>renderMediaManager(c);
+   row.querySelector(".del-client").onclick=async()=>{if(!confirm(`Delete "${c.name}" and all its media?`))return;const all=await getClients(),next=all.filter(x=>x.id!==c.id);if(await saveClients(next)){await deleteMediaStore(c.id);toast("Client deleted");$("mediaManager").innerHTML="";renderClientList();renderPortfolio()}else toast("Could not delete client")};
+  });
+ })
+}
+function renderMediaManager(c){
+ $("mediaManager").innerHTML=`<div class="media-manager"><h3 style="font-family:'Cormorant Garamond';font-size:2.5rem;margin-bottom:18px;color:var(--cream)">${esc(c.name)} — Photos & Videos</h3><div class="upload-zone" id="uploadZone"><strong>Click to upload photos</strong>JPG / PNG • multiple photos supported</div><div class="video-row"><input class="input" id="videoUrl" placeholder="Paste YouTube / Instagram Reel URL"><button class="btn" id="addVideo">Add Video Link</button></div><div class="error" id="mediaError"></div><div id="adminMediaGrid"></div></div>`;
+ $("uploadZone").onclick=()=>$("mediaInput").click();
+ $("mediaInput").onchange=async e=>{await uploadPhotos(c.id,[...e.target.files]);e.target.value=""};
+ $("addVideo").onclick=async()=>{const url=$("videoUrl").value.trim();if(!/^https?:\/\//i.test(url)){ $("mediaError").textContent="Enter a valid http(s) URL.";return }const cur=await getMedia(c.id);cur.push({id:"v"+Date.now(),type:"video",src:url,addedAt:Date.now()});if(await saveMedia(c.id,cur)){ $("videoUrl").value="";toast("Video link added");renderMediaGrid(c.id)}else $("mediaError").textContent="Could not save video link."};
+ renderMediaGrid(c.id);
+}
+async function renderMediaGrid(id){
+ const grid=$("adminMediaGrid");if(!grid)return;const media=await getMedia(id);if(!media.length){grid.innerHTML='<div class="empty">No photos or videos uploaded yet.</div>';return}
+ grid.className="admin-grid";grid.innerHTML=media.map((m,i)=>`<div class="admin-thumb">${m.type==="photo"?`<img src="${m.src}" alt="">`:`<div class="media-video">▶</div>`}<button data-i="${i}">×</button></div>`).join("");
+ grid.querySelectorAll("button").forEach(b=>b.onclick=async()=>{if(!confirm("Delete this item?"))return;const cur=await getMedia(id);cur.splice(+b.dataset.i,1);if(await saveMedia(id,cur)){toast("Item deleted");renderMediaGrid(id);renderPortfolio()}else $("mediaError").textContent="Could not delete item."})
+}
+function compress(file,max=1400,quality=.62){
+ return new Promise((resolve,reject)=>{const fr=new FileReader();fr.onload=()=>{const im=new Image();im.onload=()=>{const scale=Math.min(1,max/Math.max(im.width,im.height));const c=document.createElement("canvas");c.width=Math.max(1,Math.round(im.width*scale));c.height=Math.max(1,Math.round(im.height*scale));const ctx=c.getContext("2d");ctx.fillStyle="#fff";ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(im,0,0,c.width,c.height);resolve(c.toDataURL("image/jpeg",quality))};im.onerror=()=>reject(new Error("Image could not be read."));im.src=fr.result};fr.onerror=()=>reject(new Error("File could not be read."));fr.readAsDataURL(file)})
+}
+async function uploadPhotos(clientId,files){
+ const err=$("mediaError");err.textContent="";if(!files.length)return;
+ try{
+  $("adminMediaGrid").innerHTML='<div class="empty">Compressing photos…</div>';
+  const cur=await getMedia(clientId),items=[];
+  for(let i=0;i<files.length;i++){if(!files[i].type.startsWith("image/"))continue;err.textContent=`Compressing photo ${i+1} of ${files.length}…`;items.push({id:"m"+Date.now()+"-"+i+"-"+Math.random().toString(36).slice(2,8),type:"photo",src:await compress(files[i]),addedAt:Date.now()})}
+  if(!items.length)throw new Error("No image files selected.");
+  const next=cur.concat(items);err.textContent=`Saving ${items.length} photo(s)…`;
+  await saveMedia(clientId,next);toast(`${items.length} photo(s) uploaded successfully`);err.textContent="";await renderMediaGrid(clientId);await renderPortfolio();
+ }catch(e){console.error(e);err.textContent=e.message||"Photo upload failed."}
+}
+
+// Scroll Reveal Intersection Observer
+function initScrollReveal(){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("active");
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+}
+
+$("addClient").onclick=async()=>{const name=$("clientName").value.trim();$("clientError").textContent="";if(!name){$("clientError").textContent="Enter a client name.";return}const all=await getClients(),base=slug(name),id=all.some(x=>x.id===base)?base+"-"+Date.now():base;all.unshift({id,name,category:$("clientCategory").value,createdAt:Date.now()});if(await saveClients(all)){$("clientName").value="";toast("Client album created");renderClientList();renderPortfolio()}else $("clientError").textContent="Could not save client. Check Netlify function logs."};
+$("clientName").onkeydown=e=>{if(e.key==="Enter")$("addClient").click()};
+$("chooseFounder").onclick=()=>$("founderPhotoInput").click();
+$("founderPhotoInput").onchange=async e=>{const f=e.target.files[0];if(!f)return;$("settingsError").textContent="Compressing founder photo…";try{settings.aboutPhoto=await compress(f,1000,.62);updateForm();$("settingsError").textContent="Photo ready. Click Save Website Settings."}catch(x){$("settingsError").textContent=x.message}e.target.value=""};
+$("saveSettings").onclick=async()=>{const btn=$("saveSettings");btn.disabled=true;$("settingsError").textContent="Saving settings…";try{const next=readForm(),result=await saveSettings(next);settings=merge(result.settings||next);applySettings();await renderPortfolio();toast("Website settings saved");$("settingsError").textContent=""}catch(e){console.error(e);$("settingsError").textContent="Could not save settings: "+e.message}btn.disabled=false};
+$("resetSettings").onclick=()=>{if(confirm("Load default website text? Click Save to publish it.")){settings=structuredClone(DEFAULT);applySettings();toast("Defaults loaded")}};
+$("studioLogin").onclick=e=>{e.preventDefault();$("loginModal").classList.add("open");$("adminPassword").value="";$("loginError").textContent="";$("adminPassword").focus()};
+$("loginCancel").onclick=()=>$("loginModal").classList.remove("open");
+$("loginBtn").onclick=()=>{if($("adminPassword").value===ADMIN_PASSWORD){$("loginModal").classList.remove("open");$("adminPanel").classList.add("open");renderClientList();updateForm()}else $("loginError").textContent="Incorrect password."};
+$("adminPassword").onkeydown=e=>{if(e.key==="Enter")$("loginBtn").click()};
+$("closeAdmin").onclick=()=>{$("adminPanel").classList.remove("open");renderPortfolio()};
+$("closeGallery").onclick=()=>{$("galleryModal").classList.remove("open");document.body.classList.remove("lock")};
+$("galleryModal").onclick=e=>{if(e.target===$("galleryModal"))$("closeGallery").click()};
+$("closeViewer").onclick=()=>$("viewer").classList.remove("open");
+$("viewer").onclick=e=>{if(e.target===$("viewer"))$("viewer").classList.remove("open")};
+$("burger").onclick=()=>$("mobileMenu").classList.toggle("open");
+document.querySelectorAll(".mobile-menu a").forEach(a=>a.onclick=()=>$("mobileMenu").classList.remove("open"));
+CATS.forEach(c=>$("clientCategory").insertAdjacentHTML("beforeend",`<option>${c}</option>`));
+(async()=>{
+  settings=merge(await getSettings());
+  applySettings();
+  renderFilters();
+  await renderPortfolio();
+  initScrollReveal();
+})();
+</script>
+</body>
+</html>
